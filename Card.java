@@ -1,7 +1,7 @@
 /**
  * Class Card: describes Card objects in a game of blackjack.
  * @author aaravshah026
- * @version 1.0
+ * @version 1.1
  */
 public class Card {
 
@@ -32,6 +32,14 @@ public class Card {
         return true;
     }
 
+    public boolean valueEquals(Object o) {
+        if (o == null || o.getClass() != this.getClass())
+            return false;
+        if (this.getValue() != ((Card) o).getValue())
+            return false;
+        return true;
+    }
+
     /**
      * Getter for the suit of the Card.
      * @return CardSuit representing the suit of the Card
@@ -41,7 +49,7 @@ public class Card {
     }
 
     /**
-     * Getter for the value fo the Card.
+     * Getter for the value of the Card.
      * @return CardValue representing the value of the Card
      */
     public CardValue getValue() {
