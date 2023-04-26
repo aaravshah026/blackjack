@@ -1,6 +1,14 @@
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
+/**
+ * Deck.java
+ * Class representing a standard deck of cards.
+ *
+ * @author Aarav Shah
+ * @version 1.0
+ */
+
 public class Deck {
 
     ArrayList<Card> deck;
