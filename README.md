@@ -22,3 +22,5 @@ Future Plans:
 Version 2: Add the game rules of the dealer upcard. This requires a rework of the dealer mechanics in Blackjack.java.
 
 Version 3: Add splitting as a choice for the user, which will require a dynamic number of BlackjackHand objects.
+
+Version 4: Add betting to the game. Needs work to Table.java to keep track of user money.
