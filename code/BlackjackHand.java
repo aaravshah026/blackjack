@@ -5,12 +5,13 @@ import java.util.ArrayList;
  * Class representing a standard Hand in Blackjack.
  *
  * @author Aarav Shah
- * @version 1.0
+ * @version 1.1
  */
 public class BlackjackHand {
 
     ArrayList<Card> hand;
     int handValue;
+    int numAces;
     int numCards;
 
     /**
@@ -19,6 +20,7 @@ public class BlackjackHand {
     public BlackjackHand() {
         hand = new ArrayList<Card>();
         handValue = 0;
+        numAces = 0;
         numCards = 0;
     }
 
@@ -29,8 +31,12 @@ public class BlackjackHand {
     public void add(Card card) {
         hand.add(card);
         handValue += card.getValue();
-        if (handValue > 21 && card.getNumber() == Card.NUMBER.ACE) {
+        if (card.getNumber() == Card.NUMBER.ACE) {
+            numAces++;
+        }
+        if (handValue > 21 && numAces > 0) {
             handValue -= 10;
+            numAces--;
         }
         numCards++;
     }
